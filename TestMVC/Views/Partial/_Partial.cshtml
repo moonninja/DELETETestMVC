@@ -1,0 +1,22 @@
+﻿@model TestMVC.Models.ProductModel
+
+@using (Html.BeginForm("AddToCart", "Partial", FormMethod.Post))
+{
+    <div class="container cart-items">
+        <div>
+            @*<input type="hidden" name="ID" id="ID" value="" />*@
+            @Html.HiddenFor(item => item.ID)
+            <div class="card" style="width: 20rem;border:2px solid grey;border-radius:5px;margin:5px 2px;padding:2px;">
+                <div class="card-body" style="margin:2px;padding:2px;">
+                    <h5 class="card-title" style="border-bottom:2px solid grey;margin:2px;padding:2px;">@Html.DisplayFor(item => item.Name)</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@Html.DisplayFor(item => item.Description)</h6>
+                    <p class="card-text">@Html.DisplayFor(item => item.Price)</p>
+                    <p>
+                        <input class="btn btn-success" type="submit" value="Add to Cart">
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
